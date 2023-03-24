@@ -22,15 +22,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      
-      -   name: Setup key
-          uses: ./
-          with:
-              ssh-private-key:  ${{ secrets.SSH_PRIVATE_KEY }}
-          
-      #-   run: git clone git@github.com:swapna2503/ssh-agent.git
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+         key: ${{ secrets.SSH_PRIVATE_KEY }}
+         known_hosts: unnecessary
       - run: whoami
 
      

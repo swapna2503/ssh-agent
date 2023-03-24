@@ -30,7 +30,7 @@ jobs:
           with:
               ssh-private-key:  ${{ secrets.SSH_PRIVATE_KEY }}
           
-      -   run: git clone git@github.com:swapna2503/ssh-agent.git
-
+      #-   run: git clone git@github.com:swapna2503/ssh-agent.git
+      - run: whoami
 
      
